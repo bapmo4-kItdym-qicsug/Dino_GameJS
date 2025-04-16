@@ -68,3 +68,10 @@ let dinoJump = ()=>{ //функция для прыжка динозавра
         dino.classList.remove("dino-active");
     },500)
 }
+
+let randomCactus =() =>{ //функция для рандомных кактусов
+    let cactusImgs = ['cactus1', 'cactus2','cactus3'];
+
+    let randomImg = cactusImgs[Math.floor((Math.random()* cactusImgs.length))];
+    return randomImg;
+}
