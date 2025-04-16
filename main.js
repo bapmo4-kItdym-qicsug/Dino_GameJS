@@ -81,3 +81,15 @@ let generateClouds =() =>{ //анимация облоков
         clouds.classList.add("clouds-active");
     })
 }
+
+// console.log(clouds)
+
+let result = setInterval(()=>{// столкновение динозавра с кактусом
+    let dinoBottom = parseInt(getComputedStyle(dino).getPropertyValue("bottom"));
+    let cactusLeft = parseInt(getComputedStyle(cactus).getPropertyValue("left"));
+
+    if(dinoBottom <= 100 && cactusLeft > 0 && cactusLeft <= 20){
+        
+        gameEnd();
+    }
+},10);
