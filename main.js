@@ -122,3 +122,24 @@ let updateHighScore =() =>{ //обновление рекорда
         localStorage.setItem("high-score",score);
     }
 }
+
+restartBtn.addEventListener("click",()=>{
+    window.location.reload();
+})
+
+document.addEventListener("keydown",(e) =>{
+
+    if(e.code === "Space"){
+        iniGme();
+    }
+
+    if(e.code === "ArrowUp"){
+        if(jump){
+            dinoJump();
+            document.body.pointerEvents = "none";
+            setTimeout(() =>{
+                document.body.pointerEvents = "auto";
+            },500);
+        }
+    }
+})
