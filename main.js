@@ -75,3 +75,9 @@ let randomCactus =() =>{ //функция для рандомных кактус
     let randomImg = cactusImgs[Math.floor((Math.random()* cactusImgs.length))];
     return randomImg;
 }
+
+let generateClouds =() =>{ //анимация облоков
+    clouds.forEach((cloud)=>{
+        clouds.classList.add("clouds-active");
+    })
+}
