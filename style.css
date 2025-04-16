@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    font-family: "Press Start 2P", system-ui;
+    font-family: "Roboto", sans-serif;
+}
+
+.wrapper{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.wrapper .pre-wrapper{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 300px;
+    width: 800px;
+    overflow: hidden;
+    /* border: 1px solid black; */
+}
+
+.wrapper h4{
+    text-align: center;
+    font-weight: 400;
+    font-size: 24px;
+    color: gray;
+    user-select: none;
+}
+
+.wrapper p{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 13px;
+    color: gray;
+    font-weight: 400;
+    user-select: none;
+}
+
+.wrapper .game-wrapper{
+    height: 200px; 
+    width: 100%;
+    /* border: 1px solid grey; */
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.wrapper .game-wrapper .road{
+    height: 100px;
+    width: 800px;
+    position: absolute;
+    /* border: 1px solid grey; */
+    bottom: -23px;
+}
+
+.wrapper .game-wrapper .road img{
+    height: 200px;
+    width: 1080px;
+    position: absolute;
+    left: 0;
+}
+
+.wrapper .game-wrapper .road img.road-active{
+    animation: roadAnimate 1.5s linear infinite;
+}
+
+@keyframes roadAnimate{
+    0%{
+        left: 0;
+    }
+    100%{
+        left: -300px;
+    }
+}
+
+.wrapper .game-wrapper .dino{
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    bottom: 46px;
+    left: 10px;
+}
+
+.wrapper .game-wrapper .dino img{
+    height: 55px;
+    width: 55px;
+}
+
+.wrapper .game-wrapper .dino.dino-active{
+    animation: dinoAnimate 0.5s linear 1;
+}
+
+@keyframes dinoAnimate{
+    0%,100%{
+        bottom: 46px;
+    }
+    45%,55%{
+        bottom: 150px;
+    }
+}
+
+.wrapper .game-wrapper .cactus{
+    height: 55px;
+    width: 55px;
+    position: absolute;
+    bottom: 42px;
+    right: 45px;
+}
+
+
+.wrapper .game-wrapper .cactus img{
+    height: 63px;
+    width: 55px;
+}
+
+.wrapper .game-wrapper .cactus.cactus-active{
+    animation: animateCactus 1.5s linear infinite;
+}
+
+@keyframes animateCactus{
+    0%{
+        right: -15px;
+    }
+    100%{
+        right: 100%;
+    }
+}
+
+.wrapper .game-over .clouds{
+    height: 80px;
+    width: 100%;
+    /* border: 1px solid red; */
+    position: absolute;
+}
+
+.wrapper .game-wrapper .clouds div{
+    height: 55px;
+    width: 55px;
+    background: url("images/cloud.png");
+    position: absolute;
+    left: -200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(1){
+    bottom: 170px;
+    animation: animateClouds 18s linear infinite;
+    animation-delay: 5s;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(2){
+    bottom: 120px;
+    animation: animateClouds 23s linear infinite;
+    animation-delay: 8s;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(3){
+    bottom: 150px;
+    animation: animateClouds 14s linear infinite;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(4){
+    bottom: 100px;
+    animation: animateClouds 29s linear infinite;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(5){
+    bottom: 220px;
+    animation: animateClouds 36s linear infinite;
+}
+
+.wrapper .game-wrapper .clouds div.clouds-active:nth-child(6){
+    bottom: 140px   ;
+    animation: animateClouds 40s linear infinite;
+    animation-delay: 4s;
+}
+
+@keyframes animateClouds{
+   0%{
+    left: -200px;
+   } 
+   100%{
+    left: 2000px;
+   }
+}
+
+.wrapper .score,
+.wrapper .high-score{
+    position: absolute;
+    bottom: 200px;
+    right: 20px;
+    font-size: 10px;
+    color: gray;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.wrapper .high-score{
+    right: 80px;
+
+}
+
+.wrapper .game-over{
+    height: 70px;
+    width: 200px;
+    position: absolute;
+    /* top: 60%; */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-transform: uppercase;
+    color: #808080;
+    font-family: "Press Start 2P", system-ui;
+    display: none;
+}
+
+.wrapper .game-over h2{
+    font-size: 15px;
+    text-align: center;
+}
+
+.wrapper .game-over .restart-btn{
+    height: 30px;
+    width: 35px;
+    background-color: black;
+    border-radius: 5px;
+    position: absolute;
+    top: 47px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.wrapper .game-over .restart-btn img{
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
