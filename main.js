@@ -36,3 +36,17 @@ let startGame = () =>{ // функция старта игры
 
         scoreText.innerHTML = score;// отправляет текущее значение в HTML в класс score
     },150);
+    globalScoreInterval = scoreInterval;// останавливает счет при завершении игры
+
+    road.classList.add("road-active");//запускает анимацию дороги
+    cactus.classList.add("cactus-active");//запускает анимацию кактуса через
+
+    cactusInterval = setInterval(()=>{
+        cactusImg.src =`images/${randomCactus()}.png`;// каждые 1.5 сек меняет картинку кактуса
+    },1500);
+    globalCactusInterval = cactusInterval;
+
+    dinoRun();// запускает анимацию бега динозавра
+
+    generateClouds();//запускает анимацию облоков
+}
