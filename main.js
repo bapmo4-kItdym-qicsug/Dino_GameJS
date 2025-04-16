@@ -25,3 +25,14 @@ let iniGme =()=>{ // проверяет началась игра или нет,
     }
     gameStart = true;
 }
+let startGame = () =>{ // функция старта игры
+    scoreInterval = setInterval(()=>{ //функция,каждые 150 млсек увеличивается значение переменной score на 1
+        score++;//
+
+        score <10 ? score = "0000" + score //Преобразует число в строку с ведущими нулями, чтобы всегда было 5 цифр
+        : score < 100 ? score = "000" + score
+        : score < 1000 ? score = "00" + score
+        : score < 10000 ? score = "0" + score : score;
+
+        scoreText.innerHTML = score;// отправляет текущее значение в HTML в класс score
+    },150);
