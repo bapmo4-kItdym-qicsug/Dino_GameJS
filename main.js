@@ -93,3 +93,24 @@ let result = setInterval(()=>{// столкновение динозавра с 
         gameEnd();
     }
 },10);
+
+let gameEnd =() =>{
+    updateHighScore();
+
+    jump = false;
+
+    road.style.animationPlayState = "paused";
+    cactus.style.animationPlayState = "paused";
+    dino.style.animationPlayState = "paused";
+
+    clouds.forEach((cloud)=>{
+        cloud.style.animationPlayState = "paused";
+    })
+
+    clearInterval(globalRunInterval);
+    clearInterval(globalCactusInterval);
+    clearInterval(globalScoreInterval);
+    clearInterval(result);
+
+    gameOverBox.style.display = "block";
+}
