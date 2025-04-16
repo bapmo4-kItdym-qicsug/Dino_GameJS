@@ -50,3 +50,13 @@ let startGame = () =>{ // функция старта игры
 
     generateClouds();//запускает анимацию облоков
 }
+
+let dinoRun =() =>{// функция анимации бега динозавра 
+    runInterval = setInterval(() =>{
+        dinoImg.src = "images/dinorun1.png";
+        setTimeout(() =>{
+            dinoImg.src = "images/dinorun2.png";
+        },100);
+    },200);
+    globalRunInterval = runInterval;
+}
