@@ -114,3 +114,11 @@ let gameEnd =() =>{
 
     gameOverBox.style.display = "block";
 }
+
+let updateHighScore =() =>{ //обновление рекорда
+    let highScore = localStorage.getItem("high-score");
+
+    if(score > highScore){
+        localStorage.setItem("high-score",score);
+    }
+}
