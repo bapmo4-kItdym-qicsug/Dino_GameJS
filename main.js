@@ -60,3 +60,11 @@ let dinoRun =() =>{// функция анимации бега динозавр�
     },200);
     globalRunInterval = runInterval;
 }
+
+let dinoJump = ()=>{ //функция для прыжка динозавра
+    // console.log("prig");
+    dino.classList.add("dino-active");
+    setTimeout(() =>{
+        dino.classList.remove("dino-active");
+    },500)
+}
